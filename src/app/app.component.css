@@ -1,0 +1,16 @@
+
+.section {
+  height: 590px;
+  background-image: url("https://img.freepik.com/free-photo/golden-frame-blue-background_53876-92983.jpg?t=st=1717350836~exp=1717354436~hmac=b9828e8e04d981e273354b838956eae43b4feeefb723d529d4072b92570b8461&w=900");
+  mask-image: url("https://i.pinimg.com/564x/fb/b2/e3/fbb2e343040859bca1ad112eb970fb7f.jpg");
+  mask-size: cover;
+  -webkit-mask-image: url("https://i.pinimg.com/564x/fb/b2/e3/fbb2e343040859bca1ad112eb970fb7f.jpg");
+  -webkit-mask-size: cover;
+
+}
+
+/* .section:before{
+  background-image: url('https://i.pinimg.com/564x/fb/b2/e3/fbb2e343040859bca1ad112eb970fb7f.jpg');
+  mix-blend-mode: screen;
+} */
+

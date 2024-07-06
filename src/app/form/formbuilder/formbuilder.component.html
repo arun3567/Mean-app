@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="col-md-12">
+    <div class="row" style="margin-top: 5%;">
+    </div>
+    <div class="row">
+      <div class="col-3">
+          <mat-accordion>
+            <mat-expansion-panel (opened)="true" [expanded]="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{"Basic Field"}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <ng-container *ngFor="let item of fieldslist">
+                <div class="box-content mb-2" style="cursor:pointer" (click)="onSelectField(item)">
+                  <p style="position: relative;top:7px;">{{ item.field}}</p>
+                </div>
+              </ng-container>
+            </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+      <div class="col-6">
+        <div class="form">
+          <div class="layout">
+            <div class="layout-head" *ngIf="sections.length == 0">
+              <span style="margin-left:15px;width:90%;">Sections Not Configured</span>
+              <button mat-raised-button color="warn" (click)="addSection()">
+                <mat-icon>add</mat-icon>
+                Add
+              </button>
+            </div>
+            <div class="layout-head" *ngIf="sections.length > 0">
+              <button style="float: right;" mat-raised-button color="primary" (click)="addSection()">
+                Save
+              </button>
+              <button style="float: right;margin-right:10px;" mat-raised-button color="primary" (click)="edit()">
+                Edit
+              </button>
+              <button style="float: right;margin-right:10px;" mat-raised-button color="warn" (click)="addSection()">
+                <mat-icon>add</mat-icon>
+                Add
+              </button>
+            </div>
+            <div class="layout-content">
+              <ng-container *ngFor="let section of sections; let i = index;">
+                <div class="new-section">
+                  <div cdkDropList
+                       #doneList="cdkDropList"
+                       [cdkDropListData]="section.fields"
+                       [id]="'doneList' + i"
+                       class="example-list"
+                       (cdkDropListDropped)="drop($event)">
+                    <div class="example-box"
+                         style="width:96%;border:none;display:block;padding:0px;"
+                         *ngFor="let item of section.fields; let j = index"
+                         cdkDrag>
+                      <div style="border: 1px solid #ddd; border-radius:5px; padding:10px;">
+                        <span>{{item.fieldname}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <ng-container>
+          <div cdkDropList
+               #todoList="cdkDropList"
+               id="todoList"
+               [cdkDropListData]="fields"
+               class="example-list"
+               (cdkDropListDropped)="drop($event)">
+            <div class="example-box"
+                 *ngFor="let field of fields"
+                 cdkDrag>
+              {{field.fieldname}}
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="dialog">
+  <div class="dialog-head">
+    <div class="title">
+      <span class="title-head" style="font-size:16px;font-weight:500;">{{'Dynamic Form'}}</span>
+      <span class="dialog-close" (click)="closeDialog()">
+        <mat-icon>close</mat-icon>
+      </span>
+    </div>
+  </div>
+  <div class="dialog-content">
+    <ng-container *ngFor="let field of data.fields;let i = index;">
+      <ng-template [formDirective]="{field: field, form: form, index: i}"></ng-template>
+    </ng-container>
+    <button class="float-right" color="warn" mat-raised-button (click)="onSubmit()">Submit</button>
+  </div>
+</div>

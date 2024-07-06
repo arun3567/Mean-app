@@ -1,0 +1,30 @@
+<div class="dialog">
+  <div class="dialog-head">
+    <div class="title">
+      <span class="title-head" style="font-size:16px;font-weight:500;">{{'Field Properties'}}</span>
+      <span class="dialog-close" (click)="closeDialog()">
+        <mat-icon>close</mat-icon>
+      </span>
+    </div>
+  </div>
+  <div class="dialog-content">
+    <form [formGroup]="form">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'Field Name'}}</mat-label>
+        <input matInput formControlName="fieldname">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'Field Type'}}</mat-label>
+        <input matInput formControlName="type">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'Readonly'}}</mat-label>
+        <mat-select formControlName="readonly">
+          <mat-option [value]="true">Yes</mat-option>
+          <mat-option [value]="false">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <button class="float-right" mat-raised-button color="warn" (click)="onFormSubmit()">Submit</button>
+  </div>
+</div>

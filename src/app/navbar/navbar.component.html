@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>Project</span>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onMenuAction('form')">Form</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="profile">
+    <mat-icon>person</mat-icon>
+  </button>
+  <mat-menu #profile="matMenu">
+    <button mat-menu-item  (click)="onMenuAction('user')">Profile</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+</mat-toolbar>

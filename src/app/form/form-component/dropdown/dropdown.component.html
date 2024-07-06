@@ -1,0 +1,10 @@
+<div style="width:100%" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>{{field.fieldname}}</mat-label>
+    <mat-select [formControlName]="field.name">
+      <ng-container>
+        <mat-option [value]="'test'">option</mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+mat-form-field{
+  width: 100%;
+}
+
+.mb-2{
+  margin-bottom: 5px;
+}
+
+.dialog{
+  position: relative;
+}
+
+.dialog-head{
+  height: 50px;
+  border-bottom: 2px solid #ddd;
+}
+
+.title-head{
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+.dialog-content {
+  padding: 16px;
+}
+
+.dialog-close{
+  position: absolute;
+  float: right;
+  top: 12px;
+  right:10px;
+  cursor: pointer;
+}
+
+.box-content{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+mat-label{
+  font-size: 13px;
+}
